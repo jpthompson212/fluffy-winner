@@ -3,6 +3,12 @@
 ## Installs
 
 - scoop (package manager/isntaller)
+
+    ```powershell
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+    Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+    ```
+
 - VSCode (editor)
 - eza (better ls)
 - oh-my-posh (pretty terminals)
@@ -12,7 +18,30 @@
 - Clink (improvements to cmd)
 - Docker (along with WSL2)
 - Install 7-zip
-  - Run `C:\Users\JThompson\scoop\apps\7zip\current\install-context.reg`
+
+    ```sh
+    scoop install git
+    scoop bucket add extras
+    scoop bucket add nerd-fonts
+    scoop bucket add sysinternals
+    scoop bucket add java
+    scoop install vscode
+    scoop install eza
+    scoop install oh-my-posh
+    scoop install everything
+    scoop install FiraMono-NF
+    scoop install clink
+    scoop install 7zip
+    ```
+
+- Run `C:\Users\<user>\scoop\apps\7zip\current\install-context.reg`
+- Run `C:\Users\<user>\scoop\apps\vscode\current\install-context.reg`
+
+### Extras
+
+``` sh
+scoop install extras/dockercompletion
+```
 
 ## Setting up Terminal
 
@@ -59,4 +88,14 @@ eval "$(oh-my-posh init bash --config /c/Users/JThompson/scoop/apps/h-my-posh/cu
   ```sh
   load(io.popen('oh-my-posh --config="C:/Users/<user>/scoop/apps/h-my-posh/current/themes/cinnamon.omp.json" --init --shell cmd'):read"*a"))()
   ```
-  
+
+## Setup WSL
+
+- Run `wsl --install -d Ubuntu`
+- open an ubuntu terminal
+- Run `sudo apt install zsh`
+- Run `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+- Run `curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~ -t ~`
+- Add `eval "$(~/oh-my-posh init zsh --config ~/themes/cinnamon.omp.json)"` to ~/.zshrc
+- Follow instructions [here](https://github.com/eza-community/eza/blob/main/INSTALL.md) to install eza
+- Add `alias ls="eza -lab --group-directories-first --git --icons $Path"` to the ~/.zshrc
