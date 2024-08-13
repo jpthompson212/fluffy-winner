@@ -57,7 +57,7 @@ scoop install extras/dockercompletion
   - Add the following to that file and save it.
 
     ```sh
-    oh-my-posh init pwsh --config C:\Users\<user>\scoop\apps\oh-my-posh\current\themes\cinnamon.omp.son' | Invoke-Expression
+    oh-my-posh init pwsh --config 'C:\Users\<user>\scoop\apps\oh-my-posh\current\themes\cinnamon.omp.son' | Invoke-Expression
     function My-Func {
             [alias('ls')]
             param(
@@ -72,7 +72,7 @@ scoop install extras/dockercompletion
 - Add the following to that file and save it.
 
 ```sh
-eval "$(oh-my-posh init bash --config /c/Users/JThompson/scoop/apps/h-my-posh/current/themes/cinnamon.omp.json)"
+eval "$(oh-my-posh init bash --config /c/Users/JThompson/scoop/apps/oh-my-posh/current/themes/cinnamon.omp.json)"
 ```
 
 - add `alias ls="eza.exe -lab --group-directories-first --git --icons Path"` to your ~/.bashrc file
@@ -86,7 +86,14 @@ eval "$(oh-my-posh init bash --config /c/Users/JThompson/scoop/apps/h-my-posh/cu
   - In that file add the following:
 
   ```sh
-  load(io.popen('oh-my-posh --config="C:/Users/<user>/scoop/apps/h-my-posh/current/themes/cinnamon.omp.json" --init --shell cmd'):read"*a"))()
+  load(io.popen('oh-my-posh --config="C:/Users/<user>/scoop/apps/oh-my-posh/current/themes/cinnamon.omp.json" --init --shell cmd'):read"*a"))()
+  ```
+
+  - Run the following to add the ls alias
+ 
+  ```
+  reg add "HKCU\Software\Microsoft\Command Processor" /v Autorun /d "doskey /macrofile=\"C:\Users\JThompson\doskey_macros.txt\"" /f
+  reg query "HKCU\Software\Microsoft\Command Processor" /v Autorun
   ```
 
 ## Setup WSL
