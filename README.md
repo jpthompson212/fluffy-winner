@@ -9,15 +9,24 @@
     Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
     ```
 
+- git (version control)
 - VSCode (editor)
 - eza (better ls)
+- corretto21-jdk (java dev kit)
 - oh-my-posh (pretty terminals)
 - git (for scoop and everything else)
-- everything search
-- FiraCode Nerd Font
-- Clink (improvements to cmd)
-- Docker (along with WSL2)
-- Install 7-zip
+- everything-alpha (god tier search)
+- FiraCode Nerd Font (go to nerd font)
+- clink (improvements to cmd)
+- docker (along with WSL2)
+- 7-zip
+- windirstat (visual storage)
+- winscp (ssh file transfers)
+- sysinternals
+  - process-explorer
+  - procmon
+  - sysmon
+  - zoomit
 
     ```sh
     scoop install git
@@ -25,13 +34,21 @@
     scoop bucket add nerd-fonts
     scoop bucket add sysinternals
     scoop bucket add java
+    scoop bucket add versions
     scoop install vscode
     scoop install eza
     scoop install oh-my-posh
-    scoop install everything
+    scoop install everything-alpha
     scoop install FiraMono-NF
     scoop install clink
     scoop install 7zip
+    scoop install zoomit
+    scoop install process-explorer
+    scoop install procmon
+    scoop install sysmon
+    scoop install windirstat
+    scoop install winscp
+    scoop install corretto21-jdk
     ```
 
 - Run `C:\Users\<user>\scoop\apps\7zip\current\install-context.reg`
