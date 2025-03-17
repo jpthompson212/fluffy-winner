@@ -54,12 +54,6 @@
 - Run `C:\Users\<user>\scoop\apps\7zip\current\install-context.reg`
 - Run `C:\Users\<user>\scoop\apps\vscode\current\install-context.reg`
 
-### Extras
-
-``` sh
-scoop install extras/dockercompletion
-```
-
 ## Setting up Terminal
 
 - add nerd font to powershell and cmd profiles
